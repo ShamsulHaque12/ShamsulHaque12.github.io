@@ -1,3 +1,59 @@
+// Sticky header state on scroll
+const header = document.querySelector('header.nav-header');
+if (header) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+}
+
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+const navLinksItems = document.querySelectorAll('.nav-links a');
+
+if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    navLinksItems.forEach(item => {
+        item.addEventListener('click', () => {
+            mobileMenuBtn.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+}
+
+// Active nav link highlight on scroll
+const sections = document.querySelectorAll('section[id]');
+if (sections.length > 0 && navLinksItems.length > 0) {
+    window.addEventListener('scroll', () => {
+        let current = '';
+        const scrollPosition = window.scrollY + 120; // Offset for header height and padding
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinksItems.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+}
+
 // Smooth scroll for anchor links - Fixed for external links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -8,9 +64,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                
+                // Adjust scroll position for sticky header offset
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
                 });
             }
         }
@@ -40,7 +102,7 @@ document.querySelectorAll('.skill-card, .project-card, .timeline-item').forEach(
     observer.observe(el);
 });
 
-// Form submission handler (placeholder)
+// Form submission handler
 const contactForm = document.querySelector('form');
 if (contactForm) {
     contactForm.addEventListener('submit', async function(e) {
@@ -63,3 +125,36 @@ if (contactForm) {
         }
     });
 }
+
+// Calculate experience duration dynamically starting from 16 July 2025
+function updateExperienceDuration() {
+    const joinDate = new Date('2025-07-16');
+    const currentDate = new Date();
+    
+    // Calculate total months difference
+    let months = (currentDate.getFullYear() - joinDate.getFullYear()) * 12;
+    months -= joinDate.getMonth();
+    months += currentDate.getMonth();
+    
+    // If the current day of the month is before the join day (16th), subtract 1 month
+    if (currentDate.getDate() < joinDate.getDate()) {
+        months--;
+    }
+    
+    if (months < 0) months = 0;
+    
+    // Update elements if they exist
+    const heroExpSpan = document.getElementById('hero-exp-duration');
+    const badgeExpText = document.getElementById('badge-exp-duration');
+    
+    if (heroExpSpan) {
+        heroExpSpan.textContent = `with over ${months} months`;
+    }
+    
+    if (badgeExpText) {
+        badgeExpText.textContent = `${months}+`;
+    }
+}
+
+// Call on load
+document.addEventListener('DOMContentLoaded', updateExperienceDuration);
