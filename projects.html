@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Syne:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="animations.css">
 </head>
 
 <body>
@@ -25,20 +26,44 @@
     </nav>
 
     <header>
-        <h1>ALL <span>PROJECTS</span></h1>
-        <p>A collection of my Flutter applications and development journey.</p>
+        <h1>ALL <span class="neon-text-animated">PROJECTS</span></h1>
+        <p>A curated showcase of production-ready Flutter mobile applications and interactive games.</p>
     </header>
+
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">
+            <span>All Projects</span>
+            <span class="filter-count">9</span>
+        </button>
+        <button class="filter-btn" data-filter="mobile">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+            <span>Mobile Apps</span>
+            <span class="filter-count">7</span>
+        </button>
+        <button class="filter-btn" data-filter="game">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Games</span>
+            <span class="filter-count">2</span>
+        </button>
+    </div>
 
     <section class="projects-section">
         <div class="projects-grid">
 
             <!-- Project 1 -->
-            <div class="project-card">
+            <div class="project-card" data-category="mobile">
                 <div class="card-image grad-math">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
-                    </svg>
+                    <div class="icon-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3h2v3h3v2h-3v3h-2v-3H9V9h3V6zM6 14h5v2H6v-2zm12 2.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm0-4a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                        </svg>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3>Mathe_Genius</h3>
@@ -64,12 +89,14 @@
             </div>
 
             <!-- Project 2 -->
-            <div class="project-card">
+            <div class="project-card" data-category="mobile">
                 <div class="card-image grad-ai">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 14H6v-2h12v2zm0-4H6v-2h12v2zm0-4H6V6h12v2z" />
-                    </svg>
+                    <div class="icon-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2a2 2 0 012 2c0 .74-.4 1.38-1 1.72V7h2a5 5 0 015 5v1.28c.6.34 1 .98 1 1.72a2 2 0 01-2 2c0 .74-.4 1.38-1 1.72V20a2 2 0 01-2 2H7a2 2 0 01-2-2v-1.28c-.6-.34-1-.98-1-1.72a2 2 0 012-2V12a5 5 0 015-5h2V5.72A1.993 1.993 0 0112 2zm-3 8a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm-6 6h6v2H9v-2z" />
+                        </svg>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3>AI-CV-Matcher</h3>
@@ -93,12 +120,14 @@
                 </div>
             </div>
             <!-- Project 3 -->
-            <div class="project-card">
-                <div class="card-image grad-food">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M17 3H7c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7V5h10v14zm-1-6H8v-2h8v2z" />
-                    </svg>
+            <div class="project-card" data-category="mobile">
+                <div class="card-image grad-study">
+                    <div class="icon-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                        </svg>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3>Online_study_Learning</h3>
@@ -125,12 +154,14 @@
             </div>
 
             <!-- Project 4 -->
-            <div class="project-card">
+            <div class="project-card" data-category="mobile">
                 <div class="card-image grad-food">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M17 3H7c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7V5h10v14zm-1-6H8v-2h8v2z" />
-                    </svg>
+                    <div class="icon-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 4a2 2 0 00-2 2H4a1 1 0 000 2h16a1 1 0 000-2h-6a2 2 0 00-2-2zm-9 6a9 9 0 0018 0H3zm19 10H2v2h20v-2z" />
+                        </svg>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3>Food_Delivery_App</h3>
@@ -155,11 +186,14 @@
             </div>
 
             <!-- Project 5 -->
-            <div class="project-card">
-                <div class="card-image grad-mindset">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.89 9L12 4.57 20.11 9 12 13.43 3.89 9z" />
-                    </svg>
+            <div class="project-card" data-category="mobile">
+                <div class="card-image grad-health">
+                    <div class="icon-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35zM11 7h2v3h3v2h-3v3h-2v-3H8v-2h3V7z" />
+                        </svg>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3>Live_Health_care</h3>
@@ -186,12 +220,14 @@
             </div>
 
             <!-- Project 6 -->
-            <div class="project-card">
-                <div class="card-image grad-food">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M17 3H7c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7V5h10v14zm-1-6H8v-2h8v2z" />
-                    </svg>
+            <div class="project-card" data-category="mobile">
+                <div class="card-image grad-meditation">
+                    <div class="icon-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 3c-1.1 2.2-2.3 4.8-2.3 7 0 2.2 1.8 4 4 4s4-1.8 4-4c0-2.2-1.2-4.8-2.3-7h-3.4zm-5.7 6c-.4 1.8-.3 3.8.4 5.3 1.2 2.6 3.6 4.3 6.3 4.7-1.4-1.2-2.4-2.8-2.8-4.6-.5-2.1-.2-4.1.6-5.8l-4.5.4zm11.4 0c.8 1.7 1.1 3.7.6 5.8-.4 1.8-1.4 3.4-2.8 4.6 2.7-.4 5.1-2.1 6.3-4.7.7-1.5.8-3.5.4-5.3l-4.5-.4z" />
+                        </svg>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3>Meditation_App</h3>
@@ -220,11 +256,14 @@
             </div>
 
             <!-- Project 7 -->
-            <div class="project-card">
-                <div class="card-image grad-mindset">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.89 9L12 4.57 20.11 9 12 13.43 3.89 9z" />
-                    </svg>
+            <div class="project-card" data-category="mobile">
+                <div class="card-image grad-service">
+                    <div class="icon-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm0 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm9.64-10.64L22 4V3h-1l-7 7 1.64 1.64c.2-.2.36-.42.5-.64l-.5-.5z" />
+                        </svg>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3>Service_Hub_App</h3>
@@ -253,16 +292,19 @@
             </div>
 
             <!-- Project 8 -->
-            <div class="project-card">
-                <div class="card-image grad-mindset">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM3.89 9L12 4.57 20.11 9 12 13.43 3.89 9z" />
-                    </svg>
+            <div class="project-card" data-category="game">
+                <div class="card-image grad-property">
+                    <div class="icon-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M15 11V5l-3-3-3 3v2H3v14h18V11h-6zm-8 7H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V8h2v2zm6 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V8h2v2zm0-4h-2V4.5l1-1 1 1V6zm6 12h-2v-2h2v2zm0-4h-2v-2h2v2z" />
+                        </svg>
+                    </div>
                 </div>
                 <div class="card-content">
                     <h3>Property_Tycoon_Game</h3>
                     <span class="label">Problem Solved:</span>
-                    <p class="description">**Property Tycoon Game** — A local multiplayer property trading board game
+                    <p class="description"><strong>Property Tycoon Game</strong> — A local multiplayer property trading board game
                         for 2–4
                         players, built with Flutter. Buy properties, collect rent, manage your money, and compete to
                         become the ultimate winner.</p>
@@ -286,13 +328,87 @@
                 </div>
             </div>
 
+            <!-- Project 9 -->
+            <div class="project-card" data-category="game">
+                <div class="card-image grad-game">
+                    <div class="icon-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>Temple_Dash_Game</h3>
+                    <span class="label">Problem Solved:</span>
+                    <p class="description">🎮 <strong>Temple Dash</strong> — A 2.5D endless runner mobile game built with Flutter, Flame Engine, and GetX. Features swipe-based movement, obstacles, coins, power-ups, scoring, and progressive difficulty with a clean, scalable architecture.</p>
+                    <span class="label">Tech Stack:</span>
+                    <div class="tags">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Flame Engine</span>
+                        <span class="tag">GetX</span>
+                        <span class="tag">Hive DB</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/ShamsulHaque12/Temple_Dash_Game" target="_blank"
+                            class="btn-github-full">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            VIEW ON GITHUB
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <footer>
-        &copy; 2024 Shamsul Haque. All rights reserved.
+    <!-- Footer -->
+    <footer class="footer-modern">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-bottom: 30px; border-bottom: 1px solid rgba(0, 255, 255, 0.15);">
+                <div>
+                    <a href="index.html" style="font-size: 1.5rem; font-weight: 900; font-family: monospace; color: #fff; text-decoration: none; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 6px;">
+                        <span style="color: #00ffff;">&lt;</span>SHAMSUL<span style="color: #00ffff;">/&gt;</span>
+                    </a>
+                    <p style="color: #9ca3af; font-size: 13px; margin-top: 8px; max-width: 420px; font-family: 'Syne', sans-serif;">
+                        Flutter & Mobile App Developer specialized in building scalable, pixel-perfect, high-performance mobile applications and games.
+                    </p>
+                </div>
+
+                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+                    <div class="status-badge-live">
+                        <span class="status-dot-pulse"></span>
+                        <span>Available for Full-time & Contract Roles</span>
+                    </div>
+                    <a href="mailto:mdshamsulhaquesujon@gmail.com" style="font-size: 13px; font-family: monospace; color: #00ffff; text-decoration: none;">
+                        mdshamsulhaquesujon@gmail.com
+                    </a>
+                </div>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 24px; font-size: 12px; color: #6b7280; font-family: monospace;">
+                <p>&copy; 2024–2026 Md. Shamsul Haque Sujon. All rights reserved.</p>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <a href="index.html" style="color: #9ca3af; text-decoration: none;">Home</a>
+                    <a href="https://github.com/ShamsulHaque12" target="_blank" style="color: #9ca3af; text-decoration: none;">GitHub</a>
+                    <a href="https://www.linkedin.com/in/md-shamsul-haque-sujon/" target="_blank" style="color: #9ca3af; text-decoration: none;">LinkedIn</a>
+                    <a href="Shamsul_CV.pdf" target="_blank" style="color: #9ca3af; text-decoration: none;">Resume</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Scroll back to top">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script src="main.js"></script>
 </body>
 
 </html>

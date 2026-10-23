@@ -1,0 +1,333 @@
+/* ==========================================================================
+   ANIMATIONS & DYNAMIC MOUSE POINTER SYSTEM
+   Portfolio of Shamsul Haque — Flutter Developer
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Dynamic Top Scroll Progress Bar
+   -------------------------------------------------------------------------- */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, #00f5ff 0%, #38bdf8 35%, #818cf8 70%, #c084fc 100%);
+    box-shadow: 0 0 12px rgba(0, 245, 255, 0.8), 0 0 6px #00f5ff;
+    z-index: 100005;
+    pointer-events: none;
+    transition: width 0.1s ease-out;
+}
+
+/* --------------------------------------------------------------------------
+   2. Custom Animated Mouse Pointer (Neon Cyberpunk Cursor)
+   -------------------------------------------------------------------------- */
+
+/* Dot directly tracks pointer position */
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    margin-left: -4px;
+    margin-top: -4px;
+    background-color: #00f5ff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100002;
+    box-shadow: 
+        0 0 10px #00f5ff,
+        0 0 20px rgba(0, 245, 255, 0.7),
+        0 0 30px rgba(0, 245, 255, 0.4);
+    transition: 
+        width 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+        height 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+        margin 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.25s ease;
+    will-change: transform;
+    opacity: 0;
+}
+
+/* Ring smoothly trails the pointer with physics lerping */
+.cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    margin-left: -18px;
+    margin-top: -18px;
+    border: 1.5px solid rgba(0, 245, 255, 0.65);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100001;
+    box-shadow: 
+        0 0 14px rgba(0, 245, 255, 0.25),
+        inset 0 0 8px rgba(0, 245, 255, 0.12);
+    transition: 
+        width 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+        height 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+        margin 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.2s ease,
+        background-color 0.24s ease,
+        box-shadow 0.24s ease,
+        opacity 0.25s ease;
+    will-change: transform;
+    opacity: 0;
+}
+
+/* Cursor visible state after initial move */
+.cursor-dot.cursor-visible,
+.cursor-ring.cursor-visible {
+    opacity: 1;
+}
+
+/* Hover state over interactive elements */
+.cursor-ring.cursor-hover {
+    width: 58px;
+    height: 58px;
+    margin-left: -29px;
+    margin-top: -29px;
+    border-color: #00ffff;
+    background-color: rgba(0, 245, 255, 0.08);
+    box-shadow: 
+        0 0 26px rgba(0, 245, 255, 0.5),
+        inset 0 0 14px rgba(0, 245, 255, 0.22);
+    backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(1.5px);
+}
+
+.cursor-dot.cursor-hover {
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+    margin-top: -6px;
+    background-color: #ffffff;
+    box-shadow: 
+        0 0 12px #ffffff,
+        0 0 22px #00f5ff,
+        0 0 35px rgba(0, 245, 255, 0.8);
+}
+
+/* Active / Mouse Down State */
+.cursor-ring.cursor-active {
+    width: 26px;
+    height: 26px;
+    margin-left: -13px;
+    margin-top: -13px;
+    border-color: #38bdf8;
+    background-color: rgba(56, 189, 248, 0.35);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
+}
+
+.cursor-dot.cursor-active {
+    width: 5px;
+    height: 5px;
+    margin-left: -2.5px;
+    margin-top: -2.5px;
+    background-color: #38bdf8;
+}
+
+/* Text Input Mode */
+.cursor-ring.cursor-text-mode {
+    opacity: 0.2;
+    transform: scale(0.65);
+}
+
+.cursor-dot.cursor-text-mode {
+    opacity: 0.4;
+}
+
+/* Hidden state when cursor exits viewport */
+.cursor-hidden {
+    opacity: 0 !important;
+}
+
+/* Click Ripple Shockwave */
+.cursor-ripple {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100000;
+    border: 2px solid #00f5ff;
+    animation: cursorRipplePulse 0.55s cubic-bezier(0.12, 0.8, 0.32, 1) forwards;
+}
+
+@keyframes cursorRipplePulse {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 0.95;
+        box-shadow: 0 0 10px #00f5ff;
+    }
+    100% {
+        width: 80px;
+        height: 80px;
+        opacity: 0;
+        box-shadow: 0 0 30px rgba(0, 245, 255, 0);
+    }
+}
+
+/* Stardust Particle Tracer Trail */
+.cursor-particle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99998;
+    background: radial-gradient(circle, #00f5ff 0%, rgba(56, 189, 248, 0.5) 60%, transparent 100%);
+    box-shadow: 0 0 8px #00f5ff;
+    animation: cursorParticleFade 0.42s ease-out forwards;
+}
+
+@keyframes cursorParticleFade {
+    0% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+}
+
+/* Desktop: replace standard cursor on hover devices */
+@media (hover: hover) and (pointer: fine) {
+    html.has-custom-cursor,
+    html.has-custom-cursor body,
+    html.has-custom-cursor * {
+        cursor: none;
+    }
+    
+    /* Keep text cursor for inputs and textareas for natural typing */
+    html.has-custom-cursor input[type="text"],
+    html.has-custom-cursor input[type="email"],
+    html.has-custom-cursor input[type="search"],
+    html.has-custom-cursor input[type="tel"],
+    html.has-custom-cursor input[type="url"],
+    html.has-custom-cursor input[type="password"],
+    html.has-custom-cursor textarea {
+        cursor: text !important;
+    }
+}
+
+/* Mobile & Touch: gracefully disable custom cursor elements */
+@media (hover: none) or (pointer: coarse) {
+    .cursor-dot,
+    .cursor-ring,
+    .cursor-ripple,
+    .cursor-particle {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. Interactive Card Spotlight (Follows Mouse Cursor on Cards)
+   -------------------------------------------------------------------------- */
+.skill-card,
+.project-card,
+.timeline-content,
+.contact-card,
+.stat-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::after,
+.project-card::after,
+.contact-card::after,
+.stat-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+        360px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+        rgba(0, 245, 255, 0.14),
+        transparent 65%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.skill-card:hover::after,
+.project-card:hover::after,
+.contact-card:hover::after,
+.stat-card:hover::after {
+    opacity: 1;
+}
+
+.card-content,
+.project-info,
+.project-links,
+.timeline-date,
+.timeline-title {
+    position: relative;
+    z-index: 3;
+}
+
+/* --------------------------------------------------------------------------
+   4. Magnetic Button Micro-Interactions
+   -------------------------------------------------------------------------- */
+.btn-magnetic {
+    transition: transform 0.22s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.22s ease,
+                border-color 0.22s ease;
+    will-change: transform;
+}
+
+/* --------------------------------------------------------------------------
+   5. Interactive 3D Hero Parallax
+   -------------------------------------------------------------------------- */
+.hero-parallax-target {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+/* --------------------------------------------------------------------------
+   6. Keyframe Animations & Micro-Effects
+   -------------------------------------------------------------------------- */
+
+/* Neon Text Pulse / Glow Shimmer */
+@keyframes neonShimmer {
+    0%, 100% {
+        text-shadow: 
+            0 0 5px rgba(0, 245, 255, 0.8),
+            0 0 15px rgba(0, 245, 255, 0.5),
+            0 0 25px rgba(0, 245, 255, 0.3);
+    }
+    50% {
+        text-shadow: 
+            0 0 10px rgba(0, 245, 255, 1),
+            0 0 25px rgba(0, 245, 255, 0.75),
+            0 0 45px rgba(0, 245, 255, 0.5);
+    }
+}
+
+.neon-text-animated {
+    animation: neonShimmer 3.5s ease-in-out infinite;
+}
+
+/* Subtle float with sine wave */
+@keyframes softFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.animate-soft-float {
+    animation: softFloat 4s ease-in-out infinite;
+}

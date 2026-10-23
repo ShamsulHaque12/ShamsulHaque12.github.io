@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
 </head>
 
 
@@ -35,7 +36,7 @@
         </div>
     </header>
 
-    <!-- Floating particlesss -->
+    <!-- Floating particles -->
     <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
     <div class="particle" style="left: 20%; animation-delay: 2s;"></div>
     <div class="particle" style="left: 30%; animation-delay: 4s;"></div>
@@ -56,7 +57,7 @@
                     <span class="w-8 h-[2px] bg-cyan-500"></span> Hello, I am
                 </h2>
                 <h1 class="hero-title text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
-                    <span class="neon-text">SHAMSUL</span><br>
+                    <span class="neon-text neon-text-animated">SHAMSUL</span><br>
                     <span class="text-white">HAQUE</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-300 mb-4 font-light">
@@ -64,21 +65,21 @@
                 </p>
                 <p class="text-gray-400 text-lg mb-10 max-w-lg leading-relaxed">
                     Crafting seamless cross-platform experiences <span class="text-white" id="hero-exp-duration">with
-                        over 7 months</span>
-                    of hands-on experience building beautiful, performant mobile applications .
+                        over 1.5+ years</span>
+                    of hands-on experience building beautiful, performant mobile applications.
                 </p>
 
-                <div class="hero-cta flex flex-wrap gap-4 justify-center">
-                    <a href="#projects" class="btn-primary inline-block">View My Work</a>
-                    <a href="#contact" class="btn-secondary inline-block">Get In Touch</a>
-                    <a href="Shamsul_CV.pdf" target="_blank" class="btn-secondary inline-block">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                <div class="hero-cta flex flex-wrap gap-4 items-center">
+                    <a href="#projects" class="btn-primary inline-flex items-center justify-center">View My Work</a>
+                    <a href="#contact" class="btn-secondary inline-flex items-center justify-center">Get In Touch</a>
+                    <a href="Shamsul_CV.pdf" target="_blank" class="btn-secondary inline-flex items-center justify-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                             <polyline points="7 10 12 15 17 10" />
                             <line x1="12" y1="15" x2="12" y2="3" />
                         </svg>
-                        MY CV
+                        DOWNLOAD CV
                     </a>
                 </div>
             </div>
@@ -98,8 +99,8 @@
 
                         <div
                             class="absolute -bottom-4 -right-4 bg-card-bg border border-cyan-500/50 p-4 rounded-lg shadow-xl hidden md:block">
-                            <p class="text-cyan-400 font-bold text-xl" id="badge-exp-duration">7+</p>
-                            <p class="text-gray-400 text-xs">Months Exp.</p>
+                            <p class="text-cyan-400 font-bold text-xl" id="badge-exp-duration">1.5+</p>
+                            <p class="text-gray-400 text-xs" id="badge-exp-label">Years Exp.</p>
                         </div>
                     </div>
                 </div>
@@ -246,10 +247,12 @@
                 <!-- Project 1 -->
                 <div class="project-card rounded-xl overflow-hidden">
                     <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white opacity-30" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
-                        </svg>
+                        <div class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3h2v3h3v2h-3v3h-2v-3H9V9h3V6zM6 14h5v2H6v-2zm12 2.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm0-4a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                            </svg>
+                        </div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-white mb-3">Mathe_Genius</h3>
@@ -287,10 +290,12 @@
                 <!-- Project 2 -->
                 <div class="project-card rounded-xl overflow-hidden">
                     <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white opacity-30" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 14H6v-2h12v2zm0-4H6v-2h12v2zm0-4H6V6h12v2z" />
-                        </svg>
+                        <div class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2a2 2 0 012 2c0 .74-.4 1.38-1 1.72V7h2a5 5 0 015 5v1.28c.6.34 1 .98 1 1.72a2 2 0 01-2 2c0 .74-.4 1.38-1 1.72V20a2 2 0 01-2 2H7a2 2 0 01-2-2v-1.28c-.6-.34-1-.98-1-1.72a2 2 0 012-2V12a5 5 0 015-5h2V5.72A1.993 1.993 0 0112 2zm-3 8a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm6 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm-6 6h6v2H9v-2z" />
+                            </svg>
+                        </div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-white mb-3">AI-CV-Job-matcher</h3>
@@ -329,10 +334,12 @@
                 <!-- Project 3 -->
                 <div class="project-card rounded-xl overflow-hidden">
                     <div class="h-48 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white opacity-30" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M17 3H7c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7V5h10v14zm-1-6H8v-2h8v2z" />
-                        </svg>
+                        <div class="icon-badge">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+                            </svg>
+                        </div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-2xl font-bold text-white mb-3">Online_study_Learning</h3>
@@ -364,19 +371,20 @@
                         </div>
                     </div>
                 </div>
-                <!-- Add more project cards here -->
-                <div class="mt-16 text-center">
-                    <a href="projects.html"
-                        class="inline-flex items-center gap-2 px-10 py-4 bg-transparent border-2 border-cyan-500 text-cyan-400 font-bold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300 group">
-                        SEE ALL PROJECTS
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="group-hover:translate-x-1 transition-transform">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </a>
-                </div>
+            </div>
+
+            <!-- See All Projects Link -->
+            <div class="mt-16 text-center">
+                <a href="projects.html"
+                    class="inline-flex items-center gap-2 px-10 py-4 bg-transparent border-2 border-cyan-500 text-cyan-400 font-bold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300 group">
+                    SEE ALL PROJECTS
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="group-hover:translate-x-1 transition-transform">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -393,54 +401,87 @@
                     <h3 class="text-2xl font-bold text-cyan-400 mb-8 font-mono">// EXPERIENCE</h3>
 
                     <div class="timeline-item" style="animation-delay: 0.1s;">
-                        <div class="mb-2">
-                            <h4 class="text-xl font-bold text-white">Flutter Developer</h4>
-                            <p class="text-cyan-400 text-sm font-mono">BD Calling IT - SM Technology</p>
-                            <p class="text-gray-500 text-sm font-mono">July 2025 - Present</p>
+                        <div class="mb-3">
+                            <div class="flex items-center justify-between flex-wrap gap-2">
+                                <h4 class="text-xl font-bold text-white">Flutter Developer</h4>
+                                <span class="text-xs bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full border border-cyan-500/30 font-mono">Full-time</span>
+                            </div>
+                            <p class="text-cyan-400 text-sm font-mono mt-1">SM Technology (BD Calling IT)</p>
+                            <p class="text-gray-500 text-xs font-mono">July 2025 - Present &bull; Dhaka, Bangladesh</p>
                         </div>
-                        <p class="text-gray-400">
-                            Building cross-platform mobile applications with Flutter, implementing state management
-                            solutions, integrating REST APIs, and ensuring responsive UI/UX across devices.
-                        </p>
+                        <ul class="space-y-2 text-gray-400 text-sm mb-4">
+                            <li class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1">&#9656;</span>
+                                <span>Engineered and maintained responsive cross-platform mobile apps for Android & iOS using Flutter & Dart.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1">&#9656;</span>
+                                <span>Designed and delivered 15+ pixel-perfect screens in strict adherence to Figma design systems.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1">&#9656;</span>
+                                <span>Architected scalable codebase using Clean Architecture with GetX and Bloc state management patterns.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1">&#9656;</span>
+                                <span>Integrated real-time Agora SDK for audio/video calling and interactive livestreaming features.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-cyan-400 mt-1">&#9656;</span>
+                                <span>Managed end-to-end production build releases and deployments on Google Play Store and Apple App Store.</span>
+                            </li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-cyan-500/10 text-cyan-400 px-2.5 py-1 rounded border border-cyan-500/20 font-mono">Flutter</span>
+                            <span class="text-xs bg-cyan-500/10 text-cyan-400 px-2.5 py-1 rounded border border-cyan-500/20 font-mono">Dart</span>
+                            <span class="text-xs bg-cyan-500/10 text-cyan-400 px-2.5 py-1 rounded border border-cyan-500/20 font-mono">Clean Architecture</span>
+                            <span class="text-xs bg-cyan-500/10 text-cyan-400 px-2.5 py-1 rounded border border-cyan-500/20 font-mono">Agora SDK</span>
+                            <span class="text-xs bg-cyan-500/10 text-cyan-400 px-2.5 py-1 rounded border border-cyan-500/20 font-mono">REST APIs</span>
+                            <span class="text-xs bg-cyan-500/10 text-cyan-400 px-2.5 py-1 rounded border border-cyan-500/20 font-mono">CI/CD & Store Release</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Education Timeline -->
                 <div>
-                    <h3 class="text-2xl font-bold text-cyan-400 mb-8 font-mono">// EDUCATION</h3>
+                    <h3 class="text-2xl font-bold text-cyan-400 mb-8 font-mono">// EDUCATION & TRAINING</h3>
 
                     <div class="timeline-item" style="animation-delay: 0.2s;">
-                        <div class="mb-2">
-                            <h4 class="text-xl font-bold text-white">Bachelor's in Computer Science</h4>
-                            <p class="text-cyan-400 font-semibold mt-1">Bangladesh University of Business and Technology
-                                (BUBT)</p>
-                            <p class="text-cyan-400 text-sm font-mono">July 2021 - July 2025</p>
+                        <div class="mb-3">
+                            <div class="flex items-center justify-between flex-wrap gap-2">
+                                <h4 class="text-xl font-bold text-white">B.Sc. in Computer Science & Engineering</h4>
+                                <span class="text-xs bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full border border-cyan-500/30 font-mono">CGPA: 3.00 / 4.00</span>
+                            </div>
+                            <p class="text-cyan-400 font-semibold mt-1">Bangladesh University of Business and Technology (BUBT)</p>
+                            <p class="text-gray-500 text-xs font-mono">2021 - 2025 &bull; Dhaka, Bangladesh</p>
                         </div>
-                        <p class="text-gray-400">
-                            Focused on mobile application development, software engineering principles, data structures,
-                            algorithms, and modern development frameworks.
+                        <p class="text-gray-400 text-sm">
+                            Graduated with a solid foundation in mobile software engineering, algorithms, data structures, object-oriented analysis, and database systems.
                         </p>
                     </div>
 
                     <div class="timeline-item" style="animation-delay: 0.3s;">
-                        <div class="mb-2">
-                            <h4 class="text-xl font-bold text-white">Flutter Development Course</h4>
-                            <p class="text-cyan-400 text-sm font-mono">2024</p>
+                        <div class="mb-3">
+                            <div class="flex items-center justify-between flex-wrap gap-2">
+                                <h4 class="text-xl font-bold text-white">Higher Secondary Certificate (HSC)</h4>
+                                <span class="text-xs bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full border border-cyan-500/30 font-mono">GPA: 3.36 / 5.00</span>
+                            </div>
+                            <p class="text-cyan-400 font-semibold mt-1">Bhawal Badre Alam Govt. College</p>
+                            <p class="text-gray-500 text-xs font-mono">Passing Year: 2019 &bull; Science</p>
                         </div>
-                        <p class="text-gray-400">
-                            Completed comprehensive Flutter courses covering advanced widgets, state management,
-                            Firebase integration, and app deployment strategies.
+                        <p class="text-gray-400 text-sm">
+                            Strong analytical and mathematical background from the science division.
                         </p>
                     </div>
 
                     <div class="timeline-item" style="animation-delay: 0.4s;">
-                        <div class="mb-2">
-                            <h4 class="text-xl font-bold text-white">UI/UX Design Knowledge</h4>
-                            <p class="text-cyan-400 text-sm font-mono">Self-Taught</p>
+                        <div class="mb-3">
+                            <h4 class="text-xl font-bold text-white">Advanced Flutter & State Management</h4>
+                            <p class="text-cyan-400 text-sm font-mono mt-1">Specialized Training & Practical Engineering</p>
+                            <p class="text-gray-500 text-xs font-mono">2024</p>
                         </div>
-                        <p class="text-gray-400">
-                            Developed strong understanding of user-centered design principles, prototyping, wireframing,
-                            and creating intuitive mobile interfaces for enhanced user experiences.
+                        <p class="text-gray-400 text-sm">
+                            In-depth mastery of Clean Architecture, Bloc/Cubit, GetX, Flame Engine game architecture, and Firebase ecosystem integrations.
                         </p>
                     </div>
                 </div>
@@ -481,7 +522,7 @@
                     <div class="space-y-6">
                         <!-- LinkedIn -->
                         <a href="https://www.linkedin.com/in/md-shamsul-haque-sujon/" target="_blank"
-                            class="flex items-center gap-4 p-4 rounded-xl border border-cyan-500/30 hover:border-cyan-500 transition-all group">
+                            class="contact-card flex items-center gap-4 p-4 rounded-xl border border-cyan-500/30 hover:border-cyan-500 transition-all group">
                             <div
                                 class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center group-hover:bg-cyan-500/30 transition-all">
                                 <svg class="w-6 h-6" fill="#00D9FF" viewBox="0 0 24 24">
@@ -497,7 +538,7 @@
 
                         <!-- GitHub -->
                         <a href="https://github.com/ShamsulHaque12" target="_blank"
-                            class="flex items-center gap-4 p-4 rounded-xl border border-cyan-500/30 hover:border-cyan-500 transition-all group">
+                            class="contact-card flex items-center gap-4 p-4 rounded-xl border border-cyan-500/30 hover:border-cyan-500 transition-all group">
                             <div
                                 class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center group-hover:bg-cyan-500/30 transition-all">
                                 <svg class="w-6 h-6" fill="#00D9FF" viewBox="0 0 24 24">
@@ -512,7 +553,7 @@
                         </a>
                         <!-- Facebook -->
                         <a href="https://www.facebook.com/SHS890?mibextid=ZbWKwL" target="_blank"
-                            class="flex items-center gap-4 p-4 rounded-xl border border-cyan-500/30 hover:border-cyan-500 transition-all group">
+                            class="contact-card flex items-center gap-4 p-4 rounded-xl border border-cyan-500/30 hover:border-cyan-500 transition-all group">
                             <div
                                 class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center group-hover:bg-cyan-500/30 transition-all">
                                 <svg class="w-6 h-6" fill="#00D9FF" viewBox="0 0 24 24">
@@ -528,12 +569,12 @@
 
                         <!-- WhatsApp -->
                         <a href="https://api.whatsapp.com/send?phone=8801928970741" target="_blank"
-                            class="flex items-center gap-4 p-4 rounded-xl border border-cyan-500/30 hover:border-cyan-500 transition-all group">
+                            class="contact-card flex items-center gap-4 p-4 rounded-xl border border-cyan-500/30 hover:border-cyan-500 transition-all group">
                             <div
                                 class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center group-hover:bg-cyan-500/30 transition-all">
                                 <svg class="w-6 h-6" fill="#00D9FF" viewBox="0 0 24 24">
                                     <path
-                                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.098-.473-.148-.67.15-.197.297-.793.966-.94 1.164-.148.198-.297.396-.445.595l-.595 1.188c-.148.297-.297.595-.445.893l-1.38 2.76c-.148.297-.297.595-.445.893l-1.38 2.76c-.148.297-.297.595-.445.893l-1.38 2.76c-.148.297-.297.595-.445.893l-1.38 2.76c-.148.297-.297.595-.445.893l-1.38 2.76c-.148.297-.297.595-.445.893l-1 .6c . . . . . . . . . . . . . . . . . . .">
+                                        d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67ZM8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7.02 8.48 7.02 9.68C7.02 10.88 7.9 12.04 8.02 12.2C8.15 12.37 9.73 14.81 12.16 15.86C14.18 16.73 14.59 16.55 15.03 16.51C15.48 16.47 16.47 15.93 16.67 15.35C16.87 14.77 16.87 14.28 16.81 14.18C16.75 14.07 16.6 14.01 16.37 13.9C16.14 13.78 15.01 13.23 14.8 13.15C14.59 13.07 14.44 13.03 14.29 13.26C14.14 13.48 13.72 13.98 13.59 14.12C13.46 14.27 13.33 14.29 13.11 14.18C12.88 14.07 12.15 13.83 11.28 13.05C10.6 12.45 10.14 11.7 10.01 11.48C9.88 11.26 10 11.14 10.12 11.02C10.22 10.92 10.35 10.75 10.47 10.61C10.59 10.47 10.63 10.37 10.71 10.21C10.79 10.05 10.75 9.91 10.69 9.79C10.63 9.67 10.18 8.56 10 8.11C9.81 7.67 9.63 7.73 9.49 7.73C9.36 7.72 9.21 7.72 9.06 7.72C8.91 7.72 8.68 7.78 8.53 7.94V7.33Z">
                                 </svg>
                             </div>
                             <div>
@@ -556,16 +597,47 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 px-6 border-t border-cyan-500/20">
-        <div class="max-w-6xl mx-auto text-center">
-            <p class="text-gray-400 font-mono text-sm">
-                ------------------------ &lt; / &gt; &hearts; SHAMSUL HAQUE &hearts; &lt; / &gt;------------------------
-            </p>
-            <p class="text-gray-500 font-mono text-xs mt-2">
-                // Available for freelance opportunities
-            </p>
+    <footer class="footer-modern">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-cyan-500/15">
+                <div class="text-center md:text-left">
+                    <a href="#hero" class="text-2xl font-black font-mono text-white tracking-wider flex items-center justify-center md:justify-start gap-2">
+                        <span class="text-cyan-400">&lt;</span>SHAMSUL<span class="text-cyan-400">/&gt;</span>
+                    </a>
+                    <p class="text-gray-400 text-sm mt-2 max-w-sm">
+                        Flutter & Mobile App Developer specialized in building scalable, pixel-perfect, high-performance mobile applications.
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-center md:items-end gap-3">
+                    <div class="status-badge-live">
+                        <span class="status-dot-pulse"></span>
+                        <span>Available for Full-time & Contract Roles</span>
+                    </div>
+                    <a href="mailto:mdshamsulhaquesujon@gmail.com" class="text-sm font-mono text-cyan-400 hover:text-white transition-colors">
+                        mdshamsulhaquesujon@gmail.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 text-xs text-gray-500 font-mono">
+                <p>&copy; 2024–2026 Md. Shamsul Haque Sujon. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <a href="https://github.com/ShamsulHaque12" target="_blank" class="hover:text-cyan-400 transition-colors">GitHub</a>
+                    <a href="https://www.linkedin.com/in/md-shamsul-haque-sujon/" target="_blank" class="hover:text-cyan-400 transition-colors">LinkedIn</a>
+                    <a href="https://api.whatsapp.com/send?phone=8801928970741" target="_blank" class="hover:text-cyan-400 transition-colors">WhatsApp</a>
+                    <a href="Shamsul_CV.pdf" target="_blank" class="hover:text-cyan-400 transition-colors">Resume</a>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Scroll back to top">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
     <script src="main.js"></script>
 </body>
